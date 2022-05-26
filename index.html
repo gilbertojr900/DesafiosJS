@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Desenvolva uma função que receba um numero e uma array de numeros. essa funcção deve retornar o numero da array que for mais proximo do primeiro numero passado por parametro
+
+
+    function pegaNumeroMaisProximo(numeroReferencia, arrayNumeros){
+      
+      let numeroMaisProximo = arrayNumeros[0]
+      let diferencaDoMaisProximo = numeroReferencia - numeroMaisProximo
+      diferencaDoMaisProximo = Math.abs(diferencaDoMaisProximo)
+
+      for (let i = 1; i < arrayNumeros.length; i++){
+        let numero = arrayNumeros[i]
+        let diferenca = Math.abs(numeroReferencia - numero)
+
+        if (diferenca < diferencaDoMaisProximo) {
+          numeroMaisProximo = numero
+          diferencaDoMaisProximo = diferenca
+        }
+      }
+
+      return numeroMaisProximo
+
+
+    }
+    
+    console.log(pegaNumeroMaisProximo(100, [101, 200, 300, 99]))
+
+
+  </script>
+  
+</body>
+</html>
